@@ -33,7 +33,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Change this later in production
+    allow_origins=["https://pdf-summarizer-nine-psi.vercel.app/"],  # Change this later in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
