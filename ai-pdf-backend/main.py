@@ -19,7 +19,7 @@ client = Groq(api_key=api_key)
 
 # ---------- CREATE UPLOADS FOLDER ----------
 
-os.makedirs("uploads", exist_ok=True)
+os.remove(file_path)
 
 # ---------- FASTAPI APP ----------
 
@@ -130,7 +130,7 @@ async def upload_file(file: UploadFile = File(...)):
         }
 
     # Limit text size sent to AI
-    summary = generate_summary(extracted_text[:20000])
+    summary = generate_summary(extracted_text[:30000])
 
     return {
         "filename": file.filename,
